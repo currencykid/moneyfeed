@@ -29,7 +29,7 @@
 / Static navbar
 %body
   %nav.navbar.navbar-default.navbar-static-top
-    .container.col-md-8.col-md-offset-2
+    .col-md-8.col-md-offset-2
       .navbar-header
         %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
           %span.sr-only Toggle navigation
@@ -46,8 +46,9 @@
             %li= link_to "Submit", new_post_path
             %li= link_to "Log in", new_user_session_path
       / /.nav-collapse 
-  .container
-    .col-md-8.col-md-offset-2
-      - flash.each do |name, msg|
-        = content_tag(:div, msg, class: "alert alert-info")
-      =yield 
+  .col-md-10.col-md-offset-1.col-xs-12
+    #main_content
+      .col-md-8.col-md-offset-2
+        - flash.each do |name, msg|
+          = content_tag(:div, msg, class: "alert alert-info")
+        =yield 

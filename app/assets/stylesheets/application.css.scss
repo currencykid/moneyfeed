@@ -40,33 +40,40 @@ html, body {
     font-size: 25px ;
     margin-top: 10px;
     margin-bottom: 0px;
-        color: #337ab7;
+    color: #337ab7;
+    display: inline ; 
   }
 } 
+
+p h2 {
+  display: inline; 
+}
+
+.content {
+  margin-top: 50px; 
+}
+.vote {
+  display: inline-block;
+  overflow: hidden;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  background-position: 0 -25px;
+} 
+
 #main_content {
   #content {
     float: none;
   }
+
   padding-bottom: 100px;
-  .post{
-    padding: 2em 1em;
-    border-bottom: 1px solid #e9e9e9;
+  .post {
+    padding: 1em 1em;
     .title {
+
       a {
         color: #FF4500;
       }
     }
   }
-  .comments_title {
-    margin-top: 2em;
-  }
-  #comments {
-    .comment {
-      padding: 1em 0;
-      border-top: 1px solid #E9E9E9;
-      .lead {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
+} 
