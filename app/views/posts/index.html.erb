@@ -4,7 +4,7 @@
         <h2>
           <%= link_to post.title, url_with_protocol(post.url), :target => '_blank' %><br>
         </h2>
-        <p> <small>added by <%= post.user.email %> </small></p> 
+        <p> <small>added by <%= post.user.username%> <%= time_ago_in_words post.created_at %> ago </small></p> 
       </div>
     <% end %> 
   </div>
