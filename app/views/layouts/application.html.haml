@@ -36,14 +36,15 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "#"} MoneyFeed
+      .navbar-brand= link_to "MoneyFeed", root_path
     #navbar.navbar-collapse.collapse
-      %ul.nav.navbar-nav
       %ul.nav.navbar-nav.navbar-right
-        %li
-          %a Submit
-        %li
-          %a Log in
+        -if user_signed_in?
+          %li= link_to "Submit", new_post_path
+          %li= link_to "Log out", destroy_user_session_path, method: :delete
+        -else
+          %li= link_to "Submit", new_post_path
+          %li= link_to "Log in", new_user_session_path
     / /.nav-collapse 
 .container.col-md-8.col-md-offset-2
   =yield 
