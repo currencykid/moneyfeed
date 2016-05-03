@@ -1,0 +1,14 @@
+.post
+  - @posts.each do |post|
+    .link.row.clearfix
+      %h2
+        = link_to post.title, url_with_protocol(post.url), :target => '_blank'
+        %br
+      %p
+        %small
+          added by #{post.user.username} #{time_ago_in_words post.created_at} ago
+        .btn-group
+        = link_to like_post_path(post), method: :put, class: "btn btn-default btn-sm" do
+          %span.glyphicon.glyphicon-chevron-up
+          Upvote
+          \#{post.get_upvotes.size}

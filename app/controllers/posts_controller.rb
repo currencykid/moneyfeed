@@ -63,6 +63,13 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+   
+  def upvote 
+    @post= Post.find(params[:id])
+    @post.upvote_by current_user
+    redirect_to :back
+  end 
+
 
   private
   # Use callbacks to share common setup or constraints between actions.
