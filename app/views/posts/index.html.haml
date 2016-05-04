@@ -5,7 +5,11 @@
         .col-md-1.col-xs-2
           %span
             = link_to like_post_path(post), method: :put, class: "btn btn-default btn-sm" do
-              .glyphicon.glyphicon-chevron-up #{post.get_upvotes.size}
+              .glyphicon.glyphicon-chevron-up 
+          %span= post.get_upvotes.size
+          %span
+            = link_to dislike_post_path(post), method: :put, class: "btn btn-default btn-sm" do
+              .glyphicon.glyphicon-chevron-down 
         .col-md-10.col-xs-10
           %h2
             = link_to post.title, url_with_protocol(post.url), :target => '_blank'

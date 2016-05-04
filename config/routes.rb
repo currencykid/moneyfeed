@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :posts do 
         member do 
                 put "like" => "posts#upvote"
+                put "dislike" => "posts#downvote"
         end 
   end 
   # The priority is based upon order of creation: first created -> highest priority.
