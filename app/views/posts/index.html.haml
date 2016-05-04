@@ -13,7 +13,7 @@
           %span
             %small
               added by #{post.user.username} #{time_ago_in_words post.created_at} ago ||
-              comments
+              = link_to 'comments', root_path
           %span 
           - if user_signed_in? && current_user == post.user
             = link_to "Edit",edit_post_path(post), class: "btn btn-xs btn-info"
