@@ -25,12 +25,16 @@ html, body {
 #logo {
   font-size: 26px;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform:none;
   letter-spacing: -1px;
   padding: 15px 0;
   padding-left: 10px; 
   a {
     color: #2F363E;
+  }
+
+  a:hover {
+    text-decoration: none; 
   }
 }
 
