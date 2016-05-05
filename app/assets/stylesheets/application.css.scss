@@ -5,8 +5,7 @@
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *= require devise_bootstrap_views
@@ -68,7 +67,7 @@ p h2 {
 
   padding-bottom: 100px;
   .post {
-    padding: 1em 1em;
+    padding: .2em 1em;
     .title {
 
       a {
@@ -77,3 +76,17 @@ p h2 {
     }
   }
 } 
+
+#votebtn {
+  border: none; 
+}
+
+.votescount{
+  text-align:center; 
+  display: table;
+  margin: 0 11px;
+}
+
+.posttitle{
+margin-top: 10px;
+}

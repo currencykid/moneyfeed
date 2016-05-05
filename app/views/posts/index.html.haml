@@ -1,26 +1,25 @@
-.container.col-md-12.col-xs-12
-  .post
-    - @posts.each do |post|
-      .post.row.clearfix
-        .col-md-1.col-xs-2
-          %span
-            = link_to like_post_path(post), method: :put, class: "btn btn-default btn-sm" do
-              .glyphicon.glyphicon-chevron-up 
-          %span= post.get_upvotes.size
-          %span
-            = link_to dislike_post_path(post), method: :put, class: "btn btn-default btn-sm" do
-              .glyphicon.glyphicon-chevron-down 
-        .col-md-10.col-xs-10
-          %h2
-            = link_to post.title, url_with_protocol(post.url), :target => '_blank'
-            %br
-          %span
-            %small
-              added by #{post.user.username} #{time_ago_in_words post.created_at} ago ||
-              = link_to 'comments', root_path
-          %span 
-          - if user_signed_in? && current_user == post.user
-            = link_to "Edit",edit_post_path(post), class: "btn btn-xs btn-info"
-            = link_to "Delete",post_path(post), method: :delete, |
-              data: { confirm: "Are you sure you want to delete the post?"},      |
-              class: "btn btn-xs btn-danger"            
+- @posts.each do |post|
+  .post.row
+    .col-md-1.col-xs-2
+      %span
+        = link_to like_post_path(post), method: :put, class: "btn btn-default btn-sm", id: "votebtn" do
+          .glyphicon.glyphicon-chevron-up 
+      %span.votescount
+        = post.get_upvotes.size
+      %span
+        = link_to dislike_post_path(post), method: :put, class: "btn btn-default btn-sm", id: "votebtn" do
+          .glyphicon.glyphicon-chevron-down 
+    .col-md-10.col-xs-10.posttitle
+      %h2
+        = link_to post.title, url_with_protocol(post.url), :target => '_blank'
+        %br
+      %span
+        %small
+          added by #{post.user.username} #{time_ago_in_words post.created_at} ago ||
+          = link_to 'comments', root_path
+      %span 
+      - if user_signed_in? && current_user == post.user
+        = link_to "Edit",edit_post_path(post), class: "btn btn-xs btn-info"
+        = link_to "Delete",post_path(post), method: :delete, |
+          data: { confirm: "Are you sure you want to delete the post?"},      |
+          class: "btn btn-xs btn-danger"            
