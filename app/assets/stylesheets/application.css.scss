@@ -52,11 +52,20 @@ h3 {
   }
 } 
 
+.glyphicon-flash{
+  font-size: 2.5em; 
+  color:#337ab7; 
+}
+.glyphicon-upload {
+  font-size: 2em; 
+  color: #00e500;
+  margin-bottom: 0px;
+}
 .glyphicon-chevron-up{
-  font-size: 1.5em; 
+  font-size: 2em; 
 }
 .glyphicon-chevron-down {
-  font-size: 1.5em; 
+  font-size: 2em; 
 }
 p h2 {
   display: inline; 
@@ -96,13 +105,15 @@ p h2 {
 }
 
 .votescount{
+  margin-top: 0;
   text-align:center; 
   display: table;
-  margin: 0 14px;
+  margin: 0 19px;
 }
 
 .votes-bar {
 margin-top: 10px; 
+margin-right: 10px; 
 }
 .posttitle{
 margin-top: 14px;
