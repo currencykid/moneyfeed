@@ -35,7 +35,14 @@ html, body {
 }
 
 .post {
-margin-bottom: 10px; 
+margin-bottom: 3px; 
+h3 {
+
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #337ab7;
+    display: inline ; 
+}
   h2 {
     font-size: 25px ;
     margin-top: 10px;

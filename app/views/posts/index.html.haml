@@ -10,7 +10,7 @@
         = link_to dislike_post_path(post), method: :put, class: "btn btn-default btn-sm", id: "votebtn" do
           .glyphicon.glyphicon-chevron-down 
     .col-md-10.col-xs-10.posttitle
-      %h2
+      %h3
         = link_to post.title, url_with_protocol(post.url), :target => '_blank'
         %br
       %span
