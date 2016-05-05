@@ -20,6 +20,7 @@
 html, body {
   width: auto !important;
   overflow-x: hidden !important;
+  background: #f5f7f8;
 }
 
 #logo {
@@ -34,7 +35,7 @@ html, body {
   }
 
   a:hover {
-    text-decoration: none; 
+          text-decoration: none; 
   }
 }
 
@@ -106,6 +107,7 @@ p h2 {
 
 #votebtn {
   border: none; 
+  background-color: #f5f7f8;
 }
 
 .votescount{
