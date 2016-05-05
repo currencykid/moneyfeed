@@ -11,8 +11,12 @@
         %br
       %span
         %small
-          = post.get_upvotes.size
-          upvotes || added by #{post.user.username} #{time_ago_in_words post.created_at} ago
+          %strong
+            = post.get_upvotes.size
+            points || 
+      %span
+        %small
+          added by #{post.user.username} #{time_ago_in_words post.created_at} ago
       %br
       %span 
       - if user_signed_in? && current_user == post.user
