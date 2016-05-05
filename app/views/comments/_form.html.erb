@@ -1,13 +1,20 @@
-<%= simple_form_for(@comment) do |f| %>
-  <%= f.error_notification %>
+<hr> 
+<%= form_for [commentable, Comment.new] do |f| %> 
+  <% if commentable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(commentable.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-  <div class="form-inputs">
-    <%= f.input :post_id %>
-    <%= f.input :body %>
-    <%= f.association :user %>
+      <ul>
+        <% commentable.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class = "form-group" > 
+    <%= f.text_area :body, class: "form-control", placeholder: "Post comment" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>
+<br> 
+

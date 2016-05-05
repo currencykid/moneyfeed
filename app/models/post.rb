@@ -1,10 +1,11 @@
 class Post < ActiveRecord::Base
   acts_as_votable
   belongs_to :user
+  has_many :comments, as: :commentable
   # default_scope { order('cached_votes_score DESC') }
   default_scope { order('created_at DESC') }
 
-  validates :title, presence: true, length: {minimum: 1, maximum: 300}
+  validates :title, presence: true, length: {minimum: 2, maximum: 300}
   validates :url, presence: true
   validates :user_id, presence: true
 

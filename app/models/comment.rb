@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
-  default_scope { order('created_at DESC') }
-  belongs_to :user
-  belongs_to :post
-  validates :body, presence: true, length: {minimum: 1, maximum: 500}
+  belongs_to :commentable, polymorphic: true
+
+
+  validates :body, presence: true, length: {minimum: 2, maximum: 500}
 end

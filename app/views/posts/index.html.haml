@@ -11,12 +11,15 @@
         %br
       %span
         %small
-          %strong.upvotecolor
+          %strong
             upvotes:  
             = post.get_upvotes.size  
+            ||
       %span
         %small
           added by #{post.user.username} #{time_ago_in_words post.created_at} ago
+      %span 
+        = link_to "comments", post_path(post) 
       %br
       %span 
       - if user_signed_in? && current_user == post.user
