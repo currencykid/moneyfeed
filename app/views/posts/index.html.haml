@@ -11,9 +11,9 @@
         %br
       %span
         %small
-          %strong
-            = post.get_upvotes.size
-            points || 
+          %strong.upvotecolor
+            upvotes:  
+            = post.get_upvotes.size  
       %span
         %small
           added by #{post.user.username} #{time_ago_in_words post.created_at} ago
