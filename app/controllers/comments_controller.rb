@@ -10,15 +10,15 @@ class CommentsController < ApplicationController
     @comment.save 
 
     if @comment.save
-      redirect_to post_path(@post), notice: "Your comment was successfully posted." 
+      redirect_to :back, notice: "Your comment was successfully posted." 
     else
-      redirect_to post_path(@post), notice: "Your comment was not created." 
+      redirect_to :back, notice: "Your comment was not created." 
     end 
   end 
 
   def destroy
     @comment.destroy
-    redirect_to post_path(@post)
+    redirect_to :back, notice: "Your comment was deleted." 
   end
 
   def edit
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(params[:comment].permit(:content)) 
-    redirect_to post_path(@post)
+    redirect_to :back
     else
       render 'edit' 
     end
