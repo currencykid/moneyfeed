@@ -109,6 +109,16 @@ p h2 {
     }
   }
 } 
+#comments {
+  .comment {
+    padding: 1em 0;
+    border-top: 1px solid #E9E9E9;
+    background-color: none;
+    .lead {
+      margin-bottom: 0;
+    }
+  }
+}
 
 #votebtn {
   border: none; 
