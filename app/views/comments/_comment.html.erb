@@ -1,6 +1,6 @@
+
 <%= render 'comments/form' %> 
 
-<%= pluralize(@comments.count, "Comment") %>
 <% @comments.each do |comment| %> 
   <p><b><%= comment.user.username %></b></p>
    <%= comment.content %> 
