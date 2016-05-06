@@ -8,6 +8,4 @@
       data: { confirm: "Are you sure you want to delete the post?"},      |
       class: "btn btn-xs btn-danger"            
 
-  = render partial: "comments/form" , locals: {commentable: @post } 
-  = render partial: "comments/comments" , locals: {commentable: @post} 
-<!-- \#{link_to 'Back', posts_path} --> 
+  = render partial: "comments/comment" 

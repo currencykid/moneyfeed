@@ -5,7 +5,7 @@ Rails.application.routes.draw do
                 put "like" => "posts#upvote"
                 put "dislike" => "posts#downvote"
         end 
-        resources :comments, module: :posts
+        resources :comments
   end 
 
   resources :comments

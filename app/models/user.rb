@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   before_save { |user| user.username = user.username.downcase }
   before_save { self.email = email.downcase }
   has_many :posts
+  has_many :comments
 
   validates :username, :presence => true, :uniqueness => true
 
