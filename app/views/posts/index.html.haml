@@ -12,8 +12,7 @@
       %span
         %small
           %strong
-            upvotes:  
-            = post.get_upvotes.size  
+            = pluralize(post.cached_votes_total, "upvote") 
             ||
       %span
         %small
