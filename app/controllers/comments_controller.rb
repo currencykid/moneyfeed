@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_post
-  before_action :find_comment, only: [:destroy, :edit, :update]
+  before_action :find_comment, only: [:destroy, :edit, :update, :comment_owner]
+  before_action :comment_owner, only: [:destroy, :edit, :update] 
 
   def create
     @comment = @post.comments.create(params[:comment].permit(:content)) 
@@ -40,5 +41,12 @@ class CommentsController < ApplicationController
 
   def find_comment
     @comment = @post.comments.find(params[:id])
+  end 
+
+  def comment_owner 
+    unless current_user.id == @comment.user_id
+      flash[:notice] = "Nope, not yours."  
+      redirect_to @post
+    end 
   end 
 end

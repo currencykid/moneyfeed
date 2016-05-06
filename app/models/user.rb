@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
 
   before_save { |user| user.username = user.username.downcase }
   before_save { self.email = email.downcase }
-  has_many :posts
-  has_many :comments
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :username, :presence => true, :uniqueness => true
 
