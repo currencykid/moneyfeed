@@ -11,14 +11,14 @@
         %br
       %span
         %small
+          added by #{post.user.username} #{time_ago_in_words post.created_at} ago
+      %br
+      %span
+        %small
           %strong
             = pluralize(post.cached_votes_total, "upvote") 
             ||
-      %span
-        %small
-          added by #{post.user.username} #{time_ago_in_words post.created_at} ago
-      %span 
-        = link_to "comments", post_path(post) 
+          = link_to pluralize(post.comments.count, 'comment'), post_path(post) 
       %br
       %span 
       - if user_signed_in? && current_user == post.user
