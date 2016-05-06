@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(params[:comment].permit(:content)) 
-    redirect_to :back
+    redirect_to post_path(@post)
     else
       render 'edit' 
     end
