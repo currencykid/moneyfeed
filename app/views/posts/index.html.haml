@@ -28,3 +28,5 @@
             data: { confirm: "Are you sure you want to delete the post?"},      |
             class: "btn btn-xs btn-danger"            
 
+  %div{:align => "center"}
+    = will_paginate @posts, previous_label: h("Back"), next_label: h("More"), :page_links => false

@@ -27,6 +27,8 @@ gem 'devise-bootstrap-views'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'simple_form' 
 gem 'acts_as_votable'
+gem 'will_paginate', '~> 3.0.7'
+gem 'bootstrap-will_paginate', '~> 0.0.10' 
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
