@@ -15,7 +15,6 @@
         ||
         = pluralize(@comments.count, "comment")
         %br
-        %br
       %span 
       - if user_signed_in? && current_user == @post.user
         = link_to "Edit",edit_post_path(@post), class: "btn btn-xs btn-info"
@@ -23,4 +22,6 @@
           data: { confirm: "Are you sure you want to delete the post?"},      |
           class: "btn btn-xs btn-danger"            
 
+        %br
+        %br
     = render partial: "comments/comment" 
