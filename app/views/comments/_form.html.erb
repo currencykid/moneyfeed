@@ -1,9 +1,8 @@
 <hr> 
 <%= form_for ([@post, @post.comments.build]) do |f| %> 
   <div class = "form-group" > 
-  <%= f.text_area :content, class: "form-control", placeholder: "Post comment" %>
+  <%= f.text_area :content, class: "form-control", placeholder: "Post comment (Max 500 characters)" %>
 </div>
 <%= f.submit class: "btn btn-primary" %>
 <% end %>
 <br> 
-

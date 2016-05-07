@@ -27,8 +27,9 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(params[:comment].permit(:content)) 
-    redirect_to post_path(@post)
+    redirect_to post_path(@post), notice: "Your comment was successfully updated."
     else
+      flash[:notice] = "Comment wasn't posted. Maybe it's too long."  
       render 'edit' 
     end
   end
@@ -45,7 +46,7 @@ class CommentsController < ApplicationController
 
   def comment_owner 
     unless current_user.id == @comment.user_id
-      flash[:notice] = "Nope, not yours."  
+      flash[:notice] = "You sneaky bastard, you. Nice try." 
       redirect_to @post
     end 
   end 
