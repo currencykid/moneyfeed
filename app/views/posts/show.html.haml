@@ -4,13 +4,18 @@
       = link_to like_post_path(@post), method: :put, class: "btn btn-default btn-sm", id: "votebtn" do
         .glyphicon.glyphicon-upload
 
-      %p
-        = pluralize(@post.cached_votes_total, "upvote") 
-        %br
-        = pluralize(@comments.count, "comment")
+      
     .col-md-10.col-xs-9
       %h2
         = link_to @post.title, url_with_protocol(@post.url), :target => '_blank'
+      %small
+        added by #{@post.user.username} 
+        || 
+        = pluralize(@post.cached_votes_total, "upvote") 
+        ||
+        = pluralize(@comments.count, "comment")
+        %br
+        %br
       %span 
       - if user_signed_in? && current_user == @post.user
         = link_to "Edit",edit_post_path(@post), class: "btn btn-xs btn-info"
