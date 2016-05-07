@@ -68,6 +68,7 @@ class PostsController < ApplicationController
   def upvote 
     @post= Post.find(params[:id])
     @post.upvote_by current_user
+     @post.cached_votes_total = @post.cached_votes_total + 1
     redirect_to :back
   end 
 
