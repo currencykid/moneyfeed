@@ -1,9 +1,13 @@
-<hr> 
+  <div class="col-md-8 col-md-offset-2 col-xs-12"> 
+  <h2> Edit comment </h2> 
+</div>
+  <div class="col-md-8 col-md-offset-2 col-xs-12"> 
 <%= form_for ([@post, @comment]) do |f| %> 
   <div class = "form-group" > 
   <%= f.text_area :content, class: "form-control", placeholder: "Post comment" %>
 </div>
 <%= f.submit class: "btn btn-primary" %>
 <% end %>
+</div> 
 <br> 
 
