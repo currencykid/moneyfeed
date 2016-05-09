@@ -1,10 +1,16 @@
 .container.col-md-8.col-md-offset-2
   - @posts.each do |post|
     .post.row
-      .col-md-1.col-xs-1.votes-bar
-        %span
-          = link_to like_post_path(post), method: :put, remote: true, class: "btn btn-default btn-sm vote", id: "votebtn" do
-            .glyphicon.glyphicon-upload
+      - if current_user
+        .col-md-1.col-xs-1.votes-bar
+          %span
+            = link_to like_post_path(post), method: :put, remote: true, class: "btn btn-default btn-sm vote", id: "votebtn" do
+              .glyphicon.glyphicon-upload
+      - else  
+        .col-md-1.col-xs-1.votes-bar
+          %span
+            = link_to like_post_path(post), method: :put, class: "btn btn-default btn-sm", id: "votebtn" do
+              .glyphicon.glyphicon-upload
       .col-md-10.col-xs-10.posttitle
         %h3
           = link_to post.title, url_with_protocol(post.url), :target => '_blank'

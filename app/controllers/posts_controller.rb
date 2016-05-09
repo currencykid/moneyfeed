@@ -72,8 +72,8 @@ class PostsController < ApplicationController
     if request.xhr?
     render json: { count: @post.get_likes.size, id: params[:id] }
     else
-    redirect_to @post
-    end 
+    redirect_to :back
+   end 
   end 
 
   def downvote
