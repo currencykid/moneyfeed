@@ -69,11 +69,11 @@ class PostsController < ApplicationController
     @post= Post.find(params[:id])
     @post.upvote_by current_user
 
-  if request.xhr?
-	render json: { count: @post.get_likes.size, id: params[:id] }
-  else
-	redirect_to @post
-  end
+    if request.xhr?
+    render json: { count: @post.get_likes.size, id: params[:id] }
+    else
+    redirect_to @post
+    end 
   end 
 
   def downvote
