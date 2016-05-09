@@ -2,7 +2,7 @@
 <%= render 'comments/form' %> 
 
 <% @comments.each do |comment| %> 
-  <p><b><%= link_to comment.user.username, user_path(@post.user)  %></b> <small> <%= time_ago_in_words(comment.created_at) %> ago</small> </p>
+  <p><b><%= link_to comment.user.username, user_path(comment.user)  %></b> <small> <%= time_ago_in_words(comment.created_at) %> ago</small> </p>
    <%= comment.content %> 
    <% if current_user == comment.user %> 
    <small>
