@@ -15,7 +15,8 @@
       %small
         submitted by  
         = link_to @post.user.username, user_path(@post.user), class: "linkz" 
-        || 
+      %br
+      %span
         = pluralize(@post.cached_votes_total, "upvote") 
         ||
         = pluralize(@comments.count, "comment")
