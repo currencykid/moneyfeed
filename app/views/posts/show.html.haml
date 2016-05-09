@@ -3,14 +3,18 @@
     .col-md-2.col-xs-3
       = link_to like_post_path(@post), method: :put, class: "btn btn-default btn-sm", id: "votebtn" do
         .glyphicon.glyphicon-upload
-
+      %br
+      %span.upvotethis 
+        %strong
+          upvote 
       
     .col-md-10.col-xs-9
       %h2
         = link_to @post.title, url_with_protocol(@post.url), :target => '_blank'
       %br
       %small
-        added by #{@post.user.username} 
+        submitted by  
+        = link_to @post.user.username, user_path(@post.user), class: "linkz" 
         || 
         = pluralize(@post.cached_votes_total, "upvote") 
         ||
