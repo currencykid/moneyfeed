@@ -11,7 +11,7 @@
         .col-md-10.col-md-offset-1.col-xs-12
           .well.well-xs
             - if post.user
-              = link_to post.title, user_path(post.user), class: "post-title" 
+              = link_to post.title, url_with_protocol(post.url), :target => '_blank'
               %br
             .post-body{:class => "medlight"} 
               %p
