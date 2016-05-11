@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :authenticate_user!, :except => [:index, :show]  
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
@@ -66,7 +66,6 @@ class PostsController < ApplicationController
   end
    
   def upvote 
-    @post= Post.find(params[:id])
     @post.upvote_by current_user
 
     if request.xhr?
@@ -91,7 +90,7 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :url)
+    params.require(:post).permit(:title, :url, :slug) 
   end
 
   def require_same_user
