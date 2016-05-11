@@ -11,6 +11,7 @@
     .col-md-10.col-xs-9
       %h3
         = link_to @post.title, url_with_protocol(@post.url), :target => '_blank'
+      %br
       %small
         submitted by  
         = link_to @post.user.username, user_path(@post.user), class: "linkz" 
