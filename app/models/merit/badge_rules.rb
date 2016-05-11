@@ -21,6 +21,10 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
+      # if user has created one post grant them associate badge
+      grant_on 'posts#create',  badge: 'Associate', to: :user do |post|
+        post.user.posts.count >= 1 
+      end
       # If it creates user, grant badge
       # Should be "current_user" after registration for badge to be granted.
       # Find badge by badge_id, badge_id takes presidence over badge
