@@ -15,13 +15,13 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 html, body {
   width: auto !important;
   overflow-x: hidden !important;
   background: #fff;
   padding-bottom: 50px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #logo {
