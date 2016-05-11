@@ -18,81 +18,30 @@
             %strong
               upvote 
       .col-md-10.col-xs-10.posttitle
-        -if post.get_upvotes.size >= 4
-          %h3
-            = link_to post.title, url_with_protocol(post.url), :target => '_blank'
-            %br
-          %span
-            %small
-              submitted by #{link_to post.user.username, user_path(post.user)} #{time_ago_in_words post.created_at} ago
+        %h3
+          = link_to post.title, url_with_protocol(post.url), :target => '_blank'
           %br
-          %span
-            %strong.votes-count{"data-id" => post.id}
-              = post.get_upvotes.size 
-          %span
-            %strong
-              = "upvote".pluralize(post.cached_votes_total) 
-          %span
-            ||
-          %span
-            = link_to pluralize(post.comments.count, 'comment'), post_path(post) 
-          %br
-          %span 
-          - if user_signed_in? && current_user == post.user
-            = link_to "Edit",edit_post_path(post), class: "btn btn-xs btn-info"
-            = link_to "Delete",post_path(post), method: :delete, |
-              data: { confirm: "Are you sure you want to delete the post?"},      |
-              class: "btn btn-xs btn-danger"            
-        -elsif post.get_upvotes.size >= 2 
-          %h4
-            = link_to post.title, url_with_protocol(post.url), :target => '_blank'
-            %br
-          %span
-            %small
-              submitted by #{link_to post.user.username, user_path(post.user)} #{time_ago_in_words post.created_at} ago
-          %br
-          %span
-            %strong.votes-count{"data-id" => post.id}
-              = post.get_upvotes.size 
-          %span
-            %strong
-              = "upvote".pluralize(post.cached_votes_total) 
-          %span
-            ||
-          %span
-            = link_to pluralize(post.comments.count, 'comment'), post_path(post) 
-          %br
-          %span 
-          - if user_signed_in? && current_user == post.user
-            = link_to "Edit",edit_post_path(post), class: "btn btn-xs btn-info"
-            = link_to "Delete",post_path(post), method: :delete, |
-              data: { confirm: "Are you sure you want to delete the post?"},      |
-              class: "btn btn-xs btn-danger"            
-        -else 
-          %h5
-            = link_to post.title, url_with_protocol(post.url), :target => '_blank'
-            %br
-          %span
-            %small
-              submitted by #{link_to post.user.username, user_path(post.user)} #{time_ago_in_words post.created_at} ago
-          %br
-          %span
-            %strong.votes-count{"data-id" => post.id}
-              = post.get_upvotes.size 
-          %span
-            %strong
-              = "upvote".pluralize(post.cached_votes_total) 
-          %span
-            ||
-          %span
-            = link_to pluralize(post.comments.count, 'comment'), post_path(post) 
-          %br
-          %span 
-          - if user_signed_in? && current_user == post.user
-            = link_to "Edit",edit_post_path(post), class: "btn btn-xs btn-info"
-            = link_to "Delete",post_path(post), method: :delete, |
-              data: { confirm: "Are you sure you want to delete the post?"},      |
-              class: "btn btn-xs btn-danger"            
+        %span
+          %small
+            submitted by #{link_to post.user.username, user_path(post.user)} #{time_ago_in_words post.created_at} ago
+        %br
+        %span
+          %strong.votes-count{"data-id" => post.id}
+            = post.get_upvotes.size 
+        %span
+          %strong
+            = "upvote".pluralize(post.cached_votes_total) 
+        %span
+          ||
+        %span
+          = link_to pluralize(post.comments.count, 'comment'), post_path(post) 
+        %br
+        %span 
+        - if user_signed_in? && current_user == post.user
+          = link_to "Edit",edit_post_path(post), class: "btn btn-xs btn-info"
+          = link_to "Delete",post_path(post), method: :delete, |
+            data: { confirm: "Are you sure you want to delete the post?"},      |
+            class: "btn btn-xs btn-danger"            
 
   %div{:align => "center"}
     = will_paginate @posts, previous_label: h("Back"), next_label: h("More"), :page_links => false
