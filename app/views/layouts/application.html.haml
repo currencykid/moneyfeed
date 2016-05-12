@@ -49,6 +49,7 @@
             %li= link_to "Log in", new_user_session_path
       / /.nav-collapse 
   .col-md-10.col-md-offset-1.col-xs-12
+    %h1{:align=>"center"} Currently undergoing maintenance.
     #main_content
       - flash.each do |name, msg|
         = content_tag(:div, msg, class: "alert alert-info")
