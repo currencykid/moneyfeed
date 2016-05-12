@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   extend FriendlyId
     friendly_id :username, use: [:slugged]
 
+    acts_as_voter 
+
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
