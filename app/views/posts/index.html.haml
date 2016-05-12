@@ -2,7 +2,7 @@
   - @posts.each do |post|
     .post.row
       .col-md-1.col-xs-1.votes-bar
-        -if current_user.voted_for?post 
+        -if current_user.voted_on?post 
           %span
             .glyphicon.glyphicon-heart-empty
           %span.upvotethis 
