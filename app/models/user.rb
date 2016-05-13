@@ -1,10 +1,9 @@
 class User < ActiveRecord::Base
+    acts_as_voter 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   extend FriendlyId
     friendly_id :username, use: [:slugged]
-
-    acts_as_voter 
 
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
