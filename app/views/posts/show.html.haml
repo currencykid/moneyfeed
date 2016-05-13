@@ -1,14 +1,21 @@
 .post
   .container.col-md-8.col-md-offset-2
     .col-md-2.col-xs-3
-      -if user_signed_in? && current_user.voted_for?@post
-        .glyphicon.glyphicon-heart-empty
+      -if user_signed_in?
+        -if current_user.voted_for?@post 
+          %span 
+            .glyphicon.glyphicon-heart-empty
+        -else 
+          %span 
+            = link_to like_post_path(@post), method: :put, class: "btn btn-default btn-sm", id: "votebtn" do
+              .glyphicon.glyphicon-chevron-up
       -else 
         = link_to like_post_path(@post), method: :put, class: "btn btn-default btn-sm", id: "votebtn" do
           .glyphicon.glyphicon-chevron-up
       %br
         %span.upvotethis 
-      
+          %strong
+            vote 
     .col-md-10.col-xs-9
       %h3
         = link_to @post.title, url_with_protocol(@post.url), :target => '_blank'
