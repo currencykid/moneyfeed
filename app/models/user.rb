@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   extend FriendlyId
     friendly_id :username, use: [:slugged]
 
-  devise :database_authenticatable, :registerable, :confirmable, 
+  devise :database_authenticatable, :registerable,  
     :recoverable, :rememberable, :trackable, :validatable
 
   before_save { |user| user.username = user.username.downcase }
