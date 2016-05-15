@@ -31,6 +31,8 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate', '~> 0.0.10' 
 gem 'friendly_id' 
 
+gem 'merit' 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
