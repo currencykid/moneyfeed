@@ -13,6 +13,9 @@
             - if post.user
               = link_to post.title, url_with_protocol(post.url) 
               %br
+              %small.source-url
+                = root_source_url(post.url)
+              %br
             .post-body{:class => "medlight"} 
               %p
                 %small
