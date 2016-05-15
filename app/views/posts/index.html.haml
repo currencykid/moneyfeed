@@ -9,7 +9,7 @@
             .glyphicon.glyphicon-heart-empty
         -else 
           = link_to like_post_path(post), method: :put, class: "btn btn-default btn-sm", id: "votebtn" do
-            .glyphicon.glyphicon-menu-up
+            .glyphicon.glyphicon-triangle-top
       .col-md-10.col-xs-10.posttitle
         %h3
           = link_to post.title, url_with_protocol(post.url) 
