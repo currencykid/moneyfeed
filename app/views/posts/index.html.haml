@@ -23,8 +23,7 @@
           %strong.votes-count{"data-id" => post.id}
             = post.get_upvotes.size 
         %span
-          %strong
-            = "upvote".pluralize(post.cached_votes_total) 
+          .glyphicon.glyphicon-arrow-up
         %span
           ||
         %span
