@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
 
   belongs_to :user
-  has_many :comments 
+  has_many :comments, :dependent => :delete_all
   # default_scope { order('cached_votes_score DESC') }
   default_scope { order('created_at DESC') }
 
