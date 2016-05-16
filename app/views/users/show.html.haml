@@ -1,10 +1,10 @@
 .container
   .col-md-10.col-md-offset-1.col-xs-12
-    %h2{}  #{@user.username} 
- 
-    %h5
-      Points: 
+    %h2 #{@user.username} 
+    %h3
+      .glyphicon.glyphicon-flash 
       = @user.points
+    %hr
     %h4 Submissions: 
 
     - @user.posts.each do |post|
