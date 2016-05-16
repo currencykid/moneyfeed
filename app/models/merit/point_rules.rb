@@ -13,14 +13,16 @@ module Merit
     include Merit::PointRulesMethods
 
     def initialize
-      score 10, on: 'posts#create', to: [:user]
-      score -10, on: 'posts#destroy', to: [:user]
+      score 100, on: 'posts#create', to: [:user]
+      score -100, on: 'posts#destroy', to: [:user]
 
       # when your post gets upvoted
-      score 5, on: 'posts#upvote', to: [:user]
+      score 50, on: 'posts#upvote', to: [:user]
       
       #  when you upvote a post
-      score 2, on: 'posts#upvote'
+      score 20, on: 'posts#upvote'
+
+      score 40, on: 'comments#create' 
       # score 10, :on => 'users#create' do |user|
       #   user.bio.present?
       # end
