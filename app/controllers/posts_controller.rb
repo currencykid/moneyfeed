@@ -67,12 +67,8 @@ class PostsController < ApplicationController
    
   def upvote 
     @post.upvote_by current_user
-
-    if request.xhr?
-    render json: { count: @post.get_likes.size, id: params[:id] }
-    else
+    @post.user = current_user
     redirect_to :back
-   end 
   end 
 
   def downvote
