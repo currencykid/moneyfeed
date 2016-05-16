@@ -5,8 +5,8 @@ class Post < ActiveRecord::Base
     friendly_id :title, use: [:finders, :slugged]
 
 
-  belongs_to :user, dependent: :destroy 
-  has_many :comments, dependent: :destroy
+  belongs_to :user
+  has_many :comments 
   # default_scope { order('cached_votes_score DESC') }
   default_scope { order('created_at DESC') }
 
