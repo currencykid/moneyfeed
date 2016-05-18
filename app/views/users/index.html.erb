@@ -1,6 +1,6 @@
 <div class="container" > 
   <div align="center"> 
-    <h2>Point Leaders</h2>
+    <h2>Score</h2>
   </div>
 
   <hr/> 
@@ -15,7 +15,7 @@
         <% @users.each do |user| %>
           <tr>
             <td> <%= link_to user.username, user_path(user) %> </td> 
-            <td> <%= user.points%> </td>
+            <td><span class=" glyphicon glyphicon-flash"> </span> <%= user.points%> </td>
           </tr>
         <% end %>
       </tbody>

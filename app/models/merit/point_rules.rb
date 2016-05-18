@@ -12,6 +12,8 @@ module Merit
   class PointRules
     include Merit::PointRulesMethods
 
+    Merit::Score.top_scored
+
     def initialize
       score 100, on: 'posts#create', to: [:user]
       score -100, on: 'posts#destroy', to: [:user]
